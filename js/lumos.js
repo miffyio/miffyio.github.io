@@ -2,7 +2,7 @@ const lightbulb = document.querySelector('.lightbulb');
 
 const tooltip = document.createElement('div');
 tooltip.classList.add('lumos-tooltip');
-tooltip.textContent = "Lumos!";
+tooltip.textContent = window.innerWidth < 500 ? "Check me out on desktop!" : "Lumos!";
 document.body.appendChild(tooltip);
 
 lightbulb.addEventListener('mouseenter', function () {
