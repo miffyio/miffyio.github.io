@@ -14,8 +14,14 @@ function getSpeed(character, isDeleting) {
 }
 
 function type() {
-    typewriterElement.style.fontSize = texts[textIndex].length > 20 ? "1.5rem" : "2rem";
     typewriterElement.textContent = texts[textIndex].substr(0, charIndex);
+
+    // Set the font size based on the length of the text
+    if (texts[textIndex].length <= 20) {
+        typewriterElement.style.fontSize = "2rem";
+    } else {
+        typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.4rem" : "1.5rem";
+    }
 
     // Get the typing speed based on the character
     let typingSpeed = getSpeed(texts[textIndex][charIndex] || '', isDeleting);

@@ -3,6 +3,7 @@
 @import url(magic.css);
 @import url(lumos.css);
 @import url(tooltips.css);
+@import url(mobile.css);
 
 body {
     background-color: rgb(20, 20, 20);
