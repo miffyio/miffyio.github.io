@@ -1,0 +1,40 @@
+@import url('https://fonts.cdnfonts.com/css/harry-potter');
+
+.lightbulb {
+    animation: lightbulbPulse 1s ease-in-out infinite;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 50px 50px 10px 10px;
+    z-index: 100;
+    font-size: 2rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes lightbulbPulse {
+    from,
+    to {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.lightbulb:hover {
+    transform: translateY(5px);
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0,auto; /*!emojicursor.app*/
+}
+
+.lumos-tooltip {
+    position: absolute;
+    background-color: rgba(255, 223, 134, 0.6);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    display: none; /* Initially hidden */
+    pointer-events: none; /* Ensure it doesn't interfere with other mouse events */
+    z-index:200;
+    color: rgb(167, 89, 48);
+    /* font-family: 'Harry Potter', sans-serif; */
+}
