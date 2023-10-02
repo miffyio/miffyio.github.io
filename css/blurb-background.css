@@ -1,0 +1,36 @@
+@keyframes rotateBlob {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.6;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blob {
+    background-color: white;
+    height: 20vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(127, 255, 212), rgb(147, 112, 216));
+    /* background: linear-gradient(to right, #5e66fe, #b045bc, #f9bbf3); */
+    animation: rotateBlob 20s infinite;
+    opacity: 0.8;
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(8vmax);
+}

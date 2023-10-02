@@ -1,0 +1,31 @@
+@import url(blurb-background.css);
+@import url(card.css);
+@import url(magic.css);
+@import url(lumos.css);
+@import url(mobile.css);
+
+body {
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    margin: 0rem;
+    overflow: hidden;
+    font-family: 'Young Serif', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.cursor-file {
+    cursor: url(../files/cursor/cursor.cur), auto;
+}
+
+.cursor-wand-emoji {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0, auto;
+    /*!emojicursor.app*/
+}

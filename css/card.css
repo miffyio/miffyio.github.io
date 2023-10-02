@@ -1,0 +1,132 @@
+:root {
+    --offwhite: rgba(255, 255, 255, 0.83);
+    --hintwhite: rgba(255, 255, 255, 0.6);
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.card {
+    z-index: 99;
+    height: 640px;
+    width: 450px;
+    color: var(--offwhite);
+    display: flex;
+    align-content: center;
+}
+
+.glass {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    color: var(--offwhite);
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.avatar-wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.avatar {
+    background-color: #aaa;
+    width: 180px;
+    height: 180px;
+    /* border: 20px rgba(0, 0, 0, 0.7); */
+    /* -webkit-mask: radial-gradient(closest-side circle,#000 98%, transparent 100%); */
+    border-radius: 50%;
+    margin: 50px auto 40px;
+    opacity: 0.7;
+}
+
+.avatar:hover {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+}
+
+
+
+.name {
+    font-size: 4rem;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    /* This will evenly distribute the space between the social links */
+    justify-content: space-between;
+    /* Adjust this value to control the spacing between social links */
+    width: 65%;
+    /* Center the social links container */
+    margin: 0 auto;
+}
+
+.social-link {
+    text-decoration: none;
+}
+
+.social-icon {
+    color: var(--offwhite);
+    font-size: 2rem;
+    transition: transform 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px) scale(1.05);
+    color: rgba(194, 236, 255, 0.7);
+    color: rgba(177, 229, 254, 0.7);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.last-resume {
+    display: none;
+    color: var(--hintwhite);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 40px 10px;
+    text-align: center;
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 3px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}

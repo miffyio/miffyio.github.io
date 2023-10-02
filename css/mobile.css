@@ -1,0 +1,41 @@
+@media screen and (max-width: 499px) {
+    #blob,
+    #blur {
+        display: none;
+    }
+
+    .container {
+        color: var(--offwhite);
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .card {
+        /* height: 80vh; */
+    }
+
+    .glass {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0);
+        border-radius: 0px;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border: 0px solid rgba(255, 255, 255, 0);
+    }
+    
+    .name {
+        font-size: 3.8rem;
+    }
+
+    .lightbulb {
+        animation: lightbulbPulse 1s ease-in-out infinite;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 30px 30px 10px 10px;
+        z-index: 100;
+        font-size: 2rem;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+}

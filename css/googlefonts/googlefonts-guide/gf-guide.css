@@ -1,0 +1,118 @@
+/* https://github.com/googlefonts/googlefonts.github.io/blob/main/gf-guide/style.css */
+/* https://googlefonts.github.io/gf-guide/ */
+
+.callout {
+    background-color: #F6F6F6;
+    color: #121212;
+    padding: 1.2em 1.6em;
+    border-radius: 1em;
+    font-size: 1em
+}
+
+.useful {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1em;
+    padding: 1em;
+    background-color: #fff;
+    color: #121212;
+    /* font-size:1em */
+}
+
+.next-reading {
+    background-color: #F6F6F6;
+    color: #5D5D5D;
+    padding: 1.2em 1.6em;
+    font-size: 0.9em;
+    line-height: 1.8;
+    margin: 3em 0em;
+}
+
+.context-reading {
+    color: #5D5D5D;
+    padding: 1.2em 1.6em;
+    font-size: 0.9em;
+    line-height: 1.8;
+    margin: 2em 0em;
+}
+
+mark {
+    padding: 0.2em 0.4em;
+    border-radius: 0.4em;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    font-size: 0.8em
+}
+
+.green {
+    background-color: #D6F6C1;
+    color: #39803E;
+}
+
+.darkgreen {
+    background-color: #1c7322;
+    color: #D6F6C1;
+}
+
+.blue {
+    background-color: #ccefff;
+    color: #2568B3;
+}
+
+.yellow {
+    background-color: #FFF5C7;
+    color: #9C7D00;
+}
+
+.brown {
+    background-color: #F7EBDC;
+    color: #7E5424;
+}
+
+.grey {
+    background-color: #E5E5E5;
+    color: #6B6B6B;
+}
+
+.black {
+    background-color: #2E2E2E;
+    color: #E5E5E5;
+}
+
+.purple {
+    background-color: #e8e7f4;
+    color: #65458F;
+}
+
+.red {
+    background-color: #FFE6E6;
+    color: #DB3335;
+}
+
+.orange {
+    background-color: #FFEFD4;
+    color: #FF8700;
+}
+
+.button {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 10px 15px;
+    margin: 4px 2px 4px 0px;
+    cursor: pointer;
+    border: none;
+    border-radius: 2em;
+    transition-duration: 0.3s;
+}
+
+.button-i {
+    background-color: white;
+    color: #2568B3;
+    border: 2px solid #ccefff;
+}
+
+.button-i:hover {
+    background-color: #ccefff;
+    color: #2568B3;
+}
