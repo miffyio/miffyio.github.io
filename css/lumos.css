@@ -28,13 +28,25 @@
 
 .lumos-tooltip {
     position: absolute;
-    background-color: rgba(255, 223, 134, 0.6);
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-weight: bold;
+    z-index: 200;
     display: none; /* Initially hidden */
     pointer-events: none; /* Ensure it doesn't interfere with other mouse events */
-    z-index:200;
+    background-color: rgba(255, 223, 134, 0.6);
+    border: 2px solid rgba(167, 90, 48, 0.6);
+    border-radius: 5px;
+    padding: 5px 8px;
     color: rgb(167, 89, 48);
+    text-align: center;
     /* font-family: 'Harry Potter', sans-serif; */
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.lumos-tooltip .lumos {
+    font-size: 1rem;
+    display: block;
+}
+
+.lumos-tooltip .lumos-sub {
+    font-size: 0.8rem;
 }
