@@ -19,16 +19,14 @@ function type() {
     // Set the font size based on the length of the text
     // Set the font size based on screen size
     let charLen = texts[textIndex].length;
-    switch (charLen) {
-        case (charLen <= 20):
-            typewriterElement.style.fontSize = "2rem";
-            break;
-        case (charLen <= 25):
-            typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.4rem" : "1.5rem";
-            break;
-        default:
-            // charLen > 25
-            typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.2rem" : "1.3rem";
+    if (charLen <= 20) {
+        typewriterElement.style.fontSize = "2rem";
+    } else if (charLen <= 25) {
+        typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.4rem" : "1.5rem";
+    } else if (charLen <= 32) {
+        typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.2rem" : "1.3rem";
+    } else {
+        typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.1rem" : "1.2rem";
     }
 
     // Get the typing speed based on the character
