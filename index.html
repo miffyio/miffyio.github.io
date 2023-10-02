@@ -12,10 +12,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- meta viewport behavior -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/> bad for a11y to disable scale -->
     <!-- apple full-screen mode -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- apple style of status bar -->
@@ -89,7 +86,11 @@
     <div class="card glass prevent-select">
       <div class="container">
         <div class="avatar-wrapper">
-          <img src="files/img/avatar.jpeg" class="avatar floating" alt="Miffy Chen" />
+          <img
+            src="files/img/avatar.jpeg"
+            class="avatar floating"
+            alt="Miffy Chen"
+          />
         </div>
         <div class="name">
           <magic-wrapper>
@@ -151,13 +152,13 @@
           <a
             href="https://www.linkedin.com/in/miffy-chen/"
             target="_blank"
-            class="social-link"
+            class="social-link linkedin"
             ><i class="social-icon fa-brands fa-linkedin"></i
           ></a>
           <a
             href="https://www.github.com/miffycs"
             target="_blank"
-            class="social-link"
+            class="social-link github"
             ><i class="social-icon fa-brands fa-github"></i
           ></a>
           <!-- <a href="https://drive.google.com/file/d/11q2ZAeVJmTUDjcLeAlrMpr-JLKYO7EzQ/view" target="_blank"
@@ -165,10 +166,13 @@
           <a
             href="files/resume/ChenMiffy2023Sept-2mb.pdf"
             target="_blank"
-            class="social-link"
+            class="social-link resume"
             ><i class="social-icon fa-solid fa-file-arrow-down"></i
           ></a>
-          <a href="mailto:mchen15@bu.edu" target="_blank" class="social-link"
+          <a
+            href="mailto:mchen15@bu.edu"
+            target="_blank"
+            class="social-link email"
             ><i class="social-icon fa-regular fa-envelope"></i
           ></a>
         </div>
