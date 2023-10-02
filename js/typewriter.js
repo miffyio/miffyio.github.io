@@ -1,5 +1,5 @@
 const typewriterElement = document.querySelector('.typewriter');
-const texts = ["Software Engineer", "Full-Stack Developer", "Technical Program Manager", "AWS Solutions Architect", "AWS ML Specialist"];
+const texts = ["Software Engineer", "Full-Stack Developer", "Technical Program Manager", "AWS Solutions Architect", "AWS Machine Learning Specialist"];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -17,10 +17,18 @@ function type() {
     typewriterElement.textContent = texts[textIndex].substr(0, charIndex);
 
     // Set the font size based on the length of the text
-    if (texts[textIndex].length <= 20) {
-        typewriterElement.style.fontSize = "2rem";
-    } else {
-        typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.4rem" : "1.5rem";
+    // Set the font size based on screen size
+    let charLen = texts[textIndex].length;
+    switch (charLen) {
+        case (charLen <= 20):
+            typewriterElement.style.fontSize = "2rem";
+            break;
+        case (charLen <= 25):
+            typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.4rem" : "1.5rem";
+            break;
+        default:
+            // charLen > 25
+            typewriterElement.style.fontSize = window.innerWidth < 500 ? "1.2rem" : "1.3rem";
     }
 
     // Get the typing speed based on the character
