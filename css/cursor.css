@@ -1,0 +1,19 @@
+html {
+    cursor: none;
+}
+
+#cursor-circular-invert {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    /* background-color: transparent; */
+    border-radius: 50%;
+    border: 5px dashed #ffffff86;
+    top: var(--y, 0);
+    left: var(--x, 0);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    mix-blend-mode: difference;
+    transition: transform .2s;
+}
