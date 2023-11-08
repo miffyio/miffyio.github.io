@@ -78,7 +78,7 @@
     /* This will evenly distribute the space between the social links */
     justify-content: space-between;
     /* Adjust this value to control the spacing between social links */
-    width: 65%;
+    width: 85%;
     /* Center the social links container */
     margin: 0 auto;
 }
@@ -106,7 +106,7 @@
     display: none;
     color: var(--hintwhite);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 40px 10px;
+    padding: 25px 10px 40px 10px;
     text-align: center;
 }
 

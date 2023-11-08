@@ -3,6 +3,7 @@
 @import url(magic.css);
 @import url(lumos.css);
 @import url(mobile.css);
+@import url(cursor.css);
 
 body {
     background-color: rgb(20, 20, 20);
@@ -13,6 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* cursor: url(../files/cursor/wand.png), crosshair !important; */
 }
 
 .prevent-select {
@@ -21,11 +23,11 @@ body {
     user-select: none; /* Standard syntax */
 }
 
-.cursor-file {
+/* .cursor-file {
     cursor: url(../files/cursor/cursor.cur), auto;
-}
+} */
 
-.cursor-wand-emoji {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0, auto;
+/* .cursor-wand-emoji { */
+    /* cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0, auto; */
     /*!emojicursor.app*/
-}
+/* } */
