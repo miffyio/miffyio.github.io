@@ -20,16 +20,3 @@ lightbulb.addEventListener('mousemove', function (event) {
     tooltip.style.left = event.clientX - tooltip.offsetWidth - 10 + 'px'; // 10px offset from the cursor
     tooltip.style.top = event.clientY + 'px';
 });
-
-const resume = document.querySelector('.fa-file-arrow-down');
-const resumeLatest = document.querySelector('.last-resume');
-
-resume.addEventListener('mouseenter', function () {
-    // console.log('mouseenter');
-    resumeLatest.style.display = 'block';
-});
-
-resume.addEventListener('mouseleave', function () {
-    // console.log('mouseleave');
-    resumeLatest.style.display = 'none';
-});
