@@ -102,7 +102,7 @@
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
-.last-resume {
+.resume-last-updated {
     display: none;
     color: var(--hintwhite);
     font-family: Georgia, 'Times New Roman', Times, serif;
