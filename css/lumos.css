@@ -1,3 +1,4 @@
+/* good as title font but not text font, disable, looks crooked */
 /* @import url('https://fonts.cdnfonts.com/css/harry-potter'); */
 
 .lightbulb {
@@ -23,14 +24,17 @@
 
 .lightbulb:hover {
     transform: translateY(5px);
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0,auto; /*!emojicursor.app*/
+    /*!emojicursor.app*/
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0, auto;
 }
 
 .lumos-tooltip {
     position: absolute;
     z-index: 200;
-    display: none; /* Initially hidden */
-    pointer-events: none; /* Ensure it doesn't interfere with other mouse events */
+    /* Initially hidden */
+    display: none;
+    /* Ensure it doesn't interfere with other mouse events */
+    pointer-events: none;
     background-color: rgba(255, 223, 134, 0.6);
     border: 2px solid rgba(167, 90, 48, 0.6);
     border-radius: 5px;
