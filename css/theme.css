@@ -6,9 +6,15 @@
     --bg-base: rgb(20, 20, 22);
     --text-primary: rgba(255, 255, 255, 0.83);
     --text-secondary: rgba(255, 255, 255, 0.6);
+    /* Dark keeps the original frosted-white glass; Liquid Glass is a
+       light-theme-only treatment */
     --card-bg: rgba(255, 255, 255, 0.2);
     --card-border: rgba(255, 255, 255, 0.2);
     --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --card-blur: blur(5px) saturate(100%);
+    --card-radius: 16px;
+    --card-sheen: transparent;
+    --card-sheen-low: transparent;
     --accent-hover: rgba(177, 229, 254, 0.7);
     --glow-soft: 0 0 20px rgba(255, 255, 255, 0.7);
     --glow-strong: 0 0 40px rgba(255, 255, 255, 0.7);
@@ -18,10 +24,39 @@ html.theme-light {
     --bg-base: rgb(255, 255, 255);
     --text-primary: rgba(20, 20, 22, 0.8);
     --text-secondary: rgba(20, 20, 22, 0.55);
-    --card-bg: rgba(255, 255, 255, 0.72);
-    --card-border: rgba(0, 0, 0, 0.05);
-    --card-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    /* Clear glass: a faint tint so the blurred, saturated gradient
+       shows through, with a specular top edge and a hairline rim to
+       define the slab against the white page */
+    --card-bg: rgba(255, 255, 255, 0.22);
+    --card-border: rgba(255, 255, 255, 0.85);
+    --card-shadow: 0 12px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(20, 20, 22, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+    --card-blur: blur(24px) saturate(180%);
+    --card-radius: 28px;
+    --card-sheen: rgba(255, 255, 255, 0.35);
+    --card-sheen-low: rgba(255, 255, 255, 0.12);
     --accent-hover: rgba(24, 119, 242, 0.8);
     --glow-soft: 0 0 20px rgba(24, 119, 242, 0.3);
     --glow-strong: 0 0 40px rgba(20, 20, 22, 0.25);
+}
+
+/* Ease the theme flip. No transition on .magic-text: its background is
+   driven by the background-pan animation and clipped to text. */
+body {
+    transition: background-color 0.3s ease;
+}
+
+.glass {
+    transition: background 0.3s ease, border-color 0.3s ease,
+        box-shadow 0.3s ease, border-radius 0.3s ease,
+        backdrop-filter 0.3s ease;
+}
+
+.card,
+.container,
+.social-icon,
+.resume-last-updated {
+    transition: color 0.3s ease;
 }

@@ -14,7 +14,7 @@
     const STOPS = ["50%", "75%", "100%"];
     const ALPHAS = {
         dark: [0.10, 0.16, 0.22],
-        light: [0.024, 0.04, 0.063],
+        light: [0.04, 0.066, 0.1],
     };
 
     // Per-blob constants:
