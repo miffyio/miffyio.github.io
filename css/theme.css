@@ -1,0 +1,15 @@
+/* Semantic theme variables. Dark is the default (:root) so the site
+   stays dark when JS is unavailable. Light overrides land in
+   html.theme-light (class beats :root on specificity). */
+
+:root {
+    --bg-base: rgb(20, 20, 22);
+    --text-primary: rgba(255, 255, 255, 0.83);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --accent-hover: rgba(177, 229, 254, 0.7);
+    --glow-soft: 0 0 20px rgba(255, 255, 255, 0.7);
+    --glow-strong: 0 0 40px rgba(255, 255, 255, 0.7);
+}

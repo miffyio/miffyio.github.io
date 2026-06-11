@@ -1,3 +1,4 @@
+@import url(theme.css);
 /* @import url(blurb-background.css); */
 @import url(card.css);
 @import url(magic.css);
@@ -6,7 +7,7 @@
 @import url(mobile.css);
 
 body {
-    background-color: rgb(20, 20, 20);
+    background-color: var(--bg-base);
     height: 100vh;
     margin: 0rem;
     overflow: hidden;

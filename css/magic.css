@@ -60,7 +60,7 @@ magic-wrapper>.magic>.magic-star>svg {
 
 magic-wrapper>.magic>.magic-star>svg>path {
     /* fill: var(--violet); */
-    fill: var(--offwhite);
+    fill: var(--text-primary);
 }
 
 magic-wrapper>.magic>.magic-text {
@@ -72,7 +72,7 @@ magic-wrapper>.magic>.magic-text {
             var(--violet),
             var(--pink),
             var(--purple)); */
-    background: var(--offwhite);
+    background: var(--text-primary);
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
