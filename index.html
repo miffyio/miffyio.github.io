@@ -100,7 +100,63 @@
   </head>
 
   <body class="prevent-select">
-    <!-- <div class="lightbulb">💡</div> -->
+    <!-- Low-poly torch reflecting the current mode: lit in light mode
+         with the flame cycling ember -> amethyst -> teal (click for
+         Nox), snuffed with smoke drifting up in dark mode (click for
+         Lumos) -->
+    <div
+      class="torch"
+      role="button"
+      tabindex="0"
+      aria-label="Toggle light/dark mode"
+    >
+      <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="torch-flame">
+          <g class="flame-ember">
+            <polygon points="50,8 38,36 50,46" fill="#ffb026" />
+            <polygon points="50,8 50,46 62,36" fill="#ff9d2e" />
+            <polygon points="38,36 32,52 50,46" fill="#f8541d" />
+            <polygon points="62,36 50,46 68,52" fill="#ff8c1a" />
+            <polygon points="32,52 42,64 50,46" fill="#ffd83d" />
+            <polygon points="68,52 50,46 58,64" fill="#ffc23d" />
+            <polygon points="50,46 42,64 58,64" fill="#fff0a0" />
+            <polygon points="42,64 50,72 58,64" fill="#ff9d2e" />
+          </g>
+          <g class="flame-amethyst">
+            <polygon points="50,8 38,36 50,46" fill="#9b59d6" />
+            <polygon points="50,8 50,46 62,36" fill="#8a45c8" />
+            <polygon points="38,36 32,52 50,46" fill="#6a2ea0" />
+            <polygon points="62,36 50,46 68,52" fill="#7e3cc0" />
+            <polygon points="32,52 42,64 50,46" fill="#c77fe8" />
+            <polygon points="68,52 50,46 58,64" fill="#b86ee0" />
+            <polygon points="50,46 42,64 58,64" fill="#f2d8ff" />
+            <polygon points="42,64 50,72 58,64" fill="#8a45c8" />
+          </g>
+          <g class="flame-teal">
+            <polygon points="50,8 38,36 50,46" fill="#2bb1c9" />
+            <polygon points="50,8 50,46 62,36" fill="#2596b8" />
+            <polygon points="38,36 32,52 50,46" fill="#16708e" />
+            <polygon points="62,36 50,46 68,52" fill="#1d86a8" />
+            <polygon points="32,52 42,64 50,46" fill="#6fdde0" />
+            <polygon points="68,52 50,46 58,64" fill="#4fc8d4" />
+            <polygon points="50,46 42,64 58,64" fill="#ddfbff" />
+            <polygon points="42,64 50,72 58,64" fill="#2596b8" />
+          </g>
+        </g>
+        <g class="torch-out">
+          <polygon class="smoke smoke-1" points="50,32 45,40 50,48 55,40" fill="#b6bec8" />
+          <polygon class="smoke smoke-2" points="56,18 52,24 56,30 60,24" fill="#9aa3ad" />
+          <polygon class="smoke smoke-3" points="46,11 43,16 46,21 49,16" fill="#cdd4dc" />
+          <polygon points="40,72 60,72 50,62" fill="#4a4642" />
+        </g>
+        <g class="torch-body">
+          <polygon points="34,72 50,72 50,84 40,84" fill="#f0c34f" />
+          <polygon points="50,72 66,72 60,84 50,84" fill="#cfa23d" />
+          <polygon points="44,84 50,84 50,106 47,106" fill="#9a6a3e" />
+          <polygon points="50,84 56,84 53,106 50,106" fill="#7a5230" />
+        </g>
+      </svg>
+    </div>
     <div id="blob"></div>
     <div id="blur"></div>
     <div id="cursor-circular-invert"></div>
@@ -221,5 +277,6 @@
     <script src="js/magic.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/resume_last_updated.js"></script>
+
   </body>
 </html>

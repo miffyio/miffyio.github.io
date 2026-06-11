@@ -26,7 +26,7 @@
     }
 
     .glass {
-        /* From https://css.glass */
+        /* the card dissolves into the page on phones */
         background: rgba(255, 255, 255, 0);
         border-radius: 0px;
         box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
@@ -35,18 +35,20 @@
         border: 0px solid rgba(255, 255, 255, 0);
     }
 
+    .glass::before {
+        display: none;
+    }
+
     .name {
         font-size: 3.8rem;
     }
 
-    .lightbulb {
-        animation: lightbulbPulse 1s ease-in-out infinite;
-        position: absolute;
-        top: 0;
-        right: 0;
+    .torch {
         padding: 30px 30px 10px 10px;
-        z-index: 100;
-        font-size: 2rem;
-        text-shadow: var(--glow-soft);
+    }
+
+    .torch svg {
+        width: 32px;
+        height: 35.2px;
     }
 }

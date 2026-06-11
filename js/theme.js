@@ -88,9 +88,57 @@
             // localStorage can throw in private browsing; theme still applies
         }
         applyGradient();
+        refreshTooltip();
     }
 
     window.setTheme = setTheme;
+
+    // Torch toggle: Lumos! lights the page up, Nox! darkens it.
+    const lightbulb = document.querySelector(".torch");
+
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("lumos-tooltip");
+
+    function tooltipHTML() {
+        return currentTheme() === "dark"
+            ? '<span class="lumos">Lumos!</span><span class="lumos-sub">(click for light mode)</span>'
+            : '<span class="lumos">Nox!</span><span class="lumos-sub">(click for dark mode)</span>';
+    }
+
+    function refreshTooltip() {
+        tooltip.innerHTML = tooltipHTML();
+    }
+
+    function toggleTheme() {
+        setTheme(currentTheme() === "dark" ? "light" : "dark");
+    }
+
+    lightbulb.addEventListener("click", toggleTheme);
+    lightbulb.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleTheme();
+        }
+    });
+
+    // Hover tooltip only where hover is real; on touch, mouseleave is
+    // unreliable and the tooltip would get stuck.
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        lightbulb.addEventListener("mouseenter", function () {
+            refreshTooltip();
+            document.body.appendChild(tooltip);
+            tooltip.style.display = "block";
+        });
+
+        lightbulb.addEventListener("mouseleave", function () {
+            tooltip.style.display = "none";
+        });
+
+        lightbulb.addEventListener("mousemove", function (event) {
+            tooltip.style.left = event.clientX - tooltip.offsetWidth - 10 + "px"; // 10px offset from the cursor
+            tooltip.style.top = event.clientY + "px";
+        });
+    }
 
     window.addEventListener("resize", applyGradient);
     applyGradient();

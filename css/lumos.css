@@ -1,31 +1,185 @@
 /* good as title font but not text font, disable, looks crooked */
 /* @import url('https://fonts.cdnfonts.com/css/harry-potter'); */
 
-.lightbulb {
-    animation: lightbulbPulse 1s ease-in-out infinite;
+.torch {
+    animation: torchBob 3s ease-in-out infinite;
     position: absolute;
     top: 0;
     right: 0;
     padding: 50px 50px 10px 10px;
     z-index: 100;
-    font-size: 2rem;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
-@keyframes lightbulbPulse {
+.torch svg {
+    display: block;
+    width: 40px;
+    height: 44px;
+}
+
+/* The lit flame's glow cycles in step with the flame palette */
+html.theme-light .torch svg {
+    animation: glowCycle 9s linear infinite;
+}
+
+@keyframes glowCycle {
+    0%,
+    27%,
+    100% {
+        filter: drop-shadow(0 0 10px rgba(255, 176, 38, 0.55));
+    }
+    33%,
+    60% {
+        filter: drop-shadow(0 0 10px rgba(155, 89, 214, 0.55));
+    }
+    66%,
+    93% {
+        filter: drop-shadow(0 0 10px rgba(43, 177, 201, 0.55));
+    }
+}
+
+@keyframes torchBob {
     from,
     to {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
     }
 }
 
-.lightbulb:hover {
-    transform: translateY(5px);
+.torch:hover {
     /*!emojicursor.app*/
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0, auto;
+}
+
+/* The torch reflects the current mode: lit while the page is light,
+   snuffed out and smoking while the page is dark */
+.torch .torch-flame,
+.torch .torch-out {
+    transition: opacity 0.3s ease;
+}
+
+.torch .torch-flame {
+    opacity: 0;
+}
+
+html.theme-light .torch .torch-flame {
+    opacity: 1;
+}
+
+html.theme-light .torch .torch-out {
+    opacity: 0;
+}
+
+/* Facets glint one after another, like a slowly turning gem */
+.torch .torch-flame polygon {
+    animation: facetGlint 1.8s ease-in-out infinite;
+}
+
+.torch .torch-flame polygon:nth-child(2) { animation-delay: 0.25s; }
+.torch .torch-flame polygon:nth-child(3) { animation-delay: 0.5s; }
+.torch .torch-flame polygon:nth-child(4) { animation-delay: 0.75s; }
+.torch .torch-flame polygon:nth-child(5) { animation-delay: 1s; }
+.torch .torch-flame polygon:nth-child(6) { animation-delay: 1.25s; }
+.torch .torch-flame polygon:nth-child(7) { animation-delay: 1.5s; }
+.torch .torch-flame polygon:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes facetGlint {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.78;
+    }
+}
+
+/* The lit flame slowly cycles ember -> amethyst -> teal */
+.torch .flame-amethyst,
+.torch .flame-teal {
+    opacity: 0;
+}
+
+.torch .flame-ember {
+    animation: cycleEmber 9s linear infinite;
+}
+
+.torch .flame-amethyst {
+    animation: cycleAmethyst 9s linear infinite;
+}
+
+.torch .flame-teal {
+    animation: cycleTeal 9s linear infinite;
+}
+
+@keyframes cycleEmber {
+    0%,
+    27% {
+        opacity: 1;
+    }
+    33%,
+    93% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cycleAmethyst {
+    0%,
+    27% {
+        opacity: 0;
+    }
+    33%,
+    60% {
+        opacity: 1;
+    }
+    66%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cycleTeal {
+    0%,
+    60% {
+        opacity: 0;
+    }
+    66%,
+    93% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Smoke drifts up off the snuffed torch */
+.torch .smoke {
+    animation: smokeRise 2.6s ease-out infinite;
+}
+
+.torch .smoke-2 {
+    animation-delay: 0.9s;
+}
+
+.torch .smoke-3 {
+    animation-delay: 1.7s;
+}
+
+@keyframes smokeRise {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-16px);
+        opacity: 0;
+    }
 }
 
 .lumos-tooltip {
