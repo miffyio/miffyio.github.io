@@ -43,6 +43,24 @@
     <link rel="manifest" href="files/favicon/site.webmanifest" />
     <!-- Title -->
     <title>Miffy Chen ::: Software Engineer | Full-Stack Developer</title>
+    <!-- Set the theme class before CSS paints to avoid a wrong-theme flash:
+         saved preference > OS preference > dark (the site's identity) -->
+    <script>
+      (function () {
+        var t = null;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        }
+        document.documentElement.classList.add("theme-" + t);
+      })();
+    </script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- <link rel="stylesheet" href="css/avatarslides.css" />

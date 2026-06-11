@@ -78,6 +78,20 @@
         document.body.style.backgroundRepeat = g.backgroundRepeat;
     }
 
+    function setTheme(theme) {
+        const root = document.documentElement;
+        root.classList.remove("theme-light", "theme-dark");
+        root.classList.add("theme-" + theme);
+        try {
+            localStorage.setItem("theme", theme);
+        } catch (e) {
+            // localStorage can throw in private browsing; theme still applies
+        }
+        applyGradient();
+    }
+
+    window.setTheme = setTheme;
+
     window.addEventListener("resize", applyGradient);
     applyGradient();
 })();
