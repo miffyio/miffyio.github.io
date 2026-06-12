@@ -12,8 +12,9 @@
         [24, 119, 242], // blue
     ];
     const STOPS = ["50%", "75%", "100%"];
+    // dark (Nox) gets no gradient at all - flat original black
     const ALPHAS = {
-        dark: [0.10, 0.16, 0.22],
+        dim: [0.10, 0.16, 0.22],
         light: [0.04, 0.066, 0.1],
     };
 
@@ -65,13 +66,21 @@
     }
 
     function currentTheme() {
-        return document.documentElement.classList.contains("theme-light") ? "light" : "dark";
+        const classes = document.documentElement.classList;
+        if (classes.contains("theme-light")) return "light";
+        if (classes.contains("theme-dim")) return "dim";
+        return "dark";
     }
 
     // Sets only the background-image layers; the base color stays owned
     // by --bg-base in CSS so themes can transition it.
     function applyGradient() {
-        const g = buildGradient(layoutFor(window.innerWidth, window.innerHeight), ALPHAS[currentTheme()]);
+        const theme = currentTheme();
+        if (theme === "dark") {
+            document.body.style.backgroundImage = "none";
+            return;
+        }
+        const g = buildGradient(layoutFor(window.innerWidth, window.innerHeight), ALPHAS[theme]);
         document.body.style.backgroundImage = g.backgroundImage;
         document.body.style.backgroundSize = g.backgroundSize;
         document.body.style.backgroundPosition = g.backgroundPosition;
@@ -80,7 +89,7 @@
 
     function setTheme(theme) {
         const root = document.documentElement;
-        root.classList.remove("theme-light", "theme-dark");
+        root.classList.remove("theme-light", "theme-dim", "theme-dark");
         root.classList.add("theme-" + theme);
         try {
             localStorage.setItem("theme", theme);
@@ -93,16 +102,25 @@
 
     window.setTheme = setTheme;
 
-    // Torch toggle: Lumos! lights the page up, Nox! darkens it.
+    // Torch toggle, cycling dark -> dim -> light -> dark. The tooltip
+    // names the spell that summons the NEXT mode: Lumos kindles the dim
+    // glow, Lumos Maxima casts the blindingly bright ball of light, and
+    // Nox puts everything out.
     const lightbulb = document.querySelector(".torch");
+
+    const NEXT_THEME = { dark: "dim", dim: "light", light: "dark" };
+
+    const SPELLS = {
+        dark: '<span class="lumos">Lumos!</span><span class="lumos-sub">(click for dim mode)</span>',
+        dim: '<span class="lumos">Lumos Maxima!</span><span class="lumos-sub">(click for light mode)</span>',
+        light: '<span class="lumos">Nox!</span><span class="lumos-sub">(click for dark mode)</span>',
+    };
 
     const tooltip = document.createElement("div");
     tooltip.classList.add("lumos-tooltip");
 
     function tooltipHTML() {
-        return currentTheme() === "dark"
-            ? '<span class="lumos">Lumos!</span><span class="lumos-sub">(click for light mode)</span>'
-            : '<span class="lumos">Nox!</span><span class="lumos-sub">(click for dark mode)</span>';
+        return SPELLS[currentTheme()];
     }
 
     function refreshTooltip() {
@@ -110,7 +128,7 @@
     }
 
     function toggleTheme() {
-        setTheme(currentTheme() === "dark" ? "light" : "dark");
+        setTheme(NEXT_THEME[currentTheme()]);
     }
 
     lightbulb.addEventListener("click", toggleTheme);

@@ -52,15 +52,29 @@ html.theme-light .torch svg {
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🪄</text></svg>") 16 0, auto;
 }
 
-/* The torch reflects the current mode: lit while the page is light,
-   snuffed out and smoking while the page is dark */
+/* The torch reflects the current mode: snuffed and smoking in dark,
+   a small smoldering flame in dim, blazing through palettes in light */
 .torch .torch-flame,
+.torch .torch-dim,
 .torch .torch-out {
     transition: opacity 0.3s ease;
 }
 
-.torch .torch-flame {
+.torch .torch-flame,
+.torch .torch-dim {
     opacity: 0;
+}
+
+html.theme-dim .torch .torch-dim {
+    opacity: 1;
+}
+
+html.theme-dim .torch .torch-out {
+    opacity: 0;
+}
+
+html.theme-dim .torch svg {
+    filter: drop-shadow(0 0 7px rgba(255, 176, 38, 0.4));
 }
 
 html.theme-light .torch .torch-flame {
@@ -72,9 +86,17 @@ html.theme-light .torch .torch-out {
 }
 
 /* Facets glint one after another, like a slowly turning gem */
-.torch .torch-flame polygon {
+.torch .torch-flame polygon,
+.torch .torch-dim polygon {
     animation: facetGlint 1.8s ease-in-out infinite;
 }
+
+.torch .torch-dim polygon:nth-child(2) { animation-delay: 0.45s; }
+.torch .torch-dim polygon:nth-child(3) { animation-delay: 0.9s; }
+.torch .torch-dim polygon:nth-child(4) { animation-delay: 1.35s; }
+.torch .torch-dim polygon:nth-child(5) { animation-delay: 0.6s; }
+.torch .torch-dim polygon:nth-child(6) { animation-delay: 0.2s; }
+.torch .torch-dim polygon:nth-child(7) { animation-delay: 1.1s; }
 
 .torch .torch-flame polygon:nth-child(2) { animation-delay: 0.25s; }
 .torch .torch-flame polygon:nth-child(3) { animation-delay: 0.5s; }

@@ -44,14 +44,14 @@
     <!-- Title -->
     <title>Miffy Chen ::: Software Engineer | Full-Stack Developer</title>
     <!-- Set the theme class before CSS paints to avoid a wrong-theme flash:
-         saved preference > OS preference > dark (the site's identity) -->
+         saved preference > OS light preference > dark (the default) -->
     <script>
       (function () {
         var t = null;
         try {
           t = localStorage.getItem("theme");
         } catch (e) {}
-        if (t !== "light" && t !== "dark") {
+        if (t !== "light" && t !== "dim" && t !== "dark") {
           t =
             window.matchMedia &&
             window.matchMedia("(prefers-color-scheme: light)").matches
@@ -100,15 +100,15 @@
   </head>
 
   <body class="prevent-select">
-    <!-- Low-poly torch reflecting the current mode: lit in light mode
-         with the flame cycling ember -> amethyst -> teal (click for
-         Nox), snuffed with smoke drifting up in dark mode (click for
-         Lumos) -->
+    <!-- Low-poly torch reflecting the current mode: blazing through
+         three palettes in light mode (Lumos Maxima), a small smoldering
+         flame in dim mode (Lumos), snuffed with smoke drifting up in
+         dark mode (Nox). Click cycles dark -> dim -> light. -->
     <div
       class="torch"
       role="button"
       tabindex="0"
-      aria-label="Toggle light/dark mode"
+      aria-label="Cycle dark, dim, and light mode"
     >
       <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <g class="torch-flame">
@@ -142,6 +142,16 @@
             <polygon points="50,46 42,64 58,64" fill="#ddfbff" />
             <polygon points="42,64 50,72 58,64" fill="#2596b8" />
           </g>
+        </g>
+        <!-- dim (Lumos): a small smoldering flame low in the cup -->
+        <g class="torch-dim">
+          <polygon points="50,36 42,58 50,52" fill="#ffb026" />
+          <polygon points="50,36 50,52 58,58" fill="#ff9d2e" />
+          <polygon points="42,58 50,70 50,52" fill="#ffd83d" />
+          <polygon points="58,58 50,52 50,70" fill="#ffc23d" />
+          <polygon points="50,52 46,62 54,62" fill="#fff0a0" />
+          <polygon points="38,42 35,46 38,50 41,46" fill="#ff9d2e" opacity="0.75" />
+          <polygon points="61,34 58.5,38 61,42 63.5,38" fill="#ffc23d" opacity="0.7" />
         </g>
         <g class="torch-out">
           <polygon class="smoke smoke-1" points="50,32 45,40 50,48 55,40" fill="#b6bec8" />

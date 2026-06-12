@@ -1,9 +1,13 @@
-/* Semantic theme variables. Dark is the default (:root) so the site
-   stays dark when JS is unavailable. Light overrides land in
-   html.theme-light (class beats :root on specificity). */
+/* Semantic theme variables for the three modes:
+   dark (Nox)           - the site's original flat black, no gradient
+   dim (Lumos)          - near-black with the gradient blooms
+   light (Lumos Maxima) - white with Liquid Glass
+   Dark is the default (:root) so the site stays dark when JS is
+   unavailable. Overrides land on html.theme-dim / html.theme-light
+   (class beats :root on specificity). */
 
 :root {
-    --bg-base: rgb(20, 20, 22);
+    --bg-base: rgb(20, 20, 20);
     --text-primary: rgba(255, 255, 255, 0.83);
     --text-secondary: rgba(255, 255, 255, 0.6);
     /* Dark keeps the original frosted-white glass; Liquid Glass is a
@@ -18,6 +22,12 @@
     --accent-hover: rgba(177, 229, 254, 0.7);
     --glow-soft: 0 0 20px rgba(255, 255, 255, 0.7);
     --glow-strong: 0 0 40px rgba(255, 255, 255, 0.7);
+}
+
+/* Dim shares dark's card and text; only the base under the gradient
+   blooms differs */
+html.theme-dim {
+    --bg-base: rgb(20, 20, 22);
 }
 
 html.theme-light {
