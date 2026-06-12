@@ -17,3 +17,10 @@ html {
     mix-blend-mode: difference;
     transition: transform .2s;
 }
+
+/* While the torch shows the wand cursor, the dotted circle steps
+   aside - one cursor at a time. The torch precedes the cursor dot in
+   the DOM, so the sibling combinator can reach it. */
+.torch:hover ~ #cursor-circular-invert {
+    display: none;
+}
