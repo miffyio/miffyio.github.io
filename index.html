@@ -43,8 +43,9 @@
     <link rel="manifest" href="files/favicon/site.webmanifest" />
     <!-- Title -->
     <title>Miffy Chen ::: Software Engineer | Full-Stack Developer</title>
-    <!-- Set the theme class before CSS paints to avoid a wrong-theme flash:
-         saved preference > OS light preference > dark (the default) -->
+    <!-- Set the theme class before CSS paints to avoid a wrong-theme
+         flash. Everyone starts in dark (Nox); only a previously saved
+         choice overrides it. -->
     <script>
       (function () {
         var t = null;
@@ -52,11 +53,7 @@
           t = localStorage.getItem("theme");
         } catch (e) {}
         if (t !== "light" && t !== "dim" && t !== "dark") {
-          t =
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: light)").matches
-              ? "light"
-              : "dark";
+          t = "dark";
         }
         document.documentElement.classList.add("theme-" + t);
       })();
